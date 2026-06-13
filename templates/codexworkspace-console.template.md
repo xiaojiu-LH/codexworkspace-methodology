@@ -21,6 +21,8 @@ Codex 的强执行规则集中维护在 [AGENTS.md](AGENTS.md)。
 
 本控制台只做索引，不重复维护执行细则。
 
+安装、删除、重命名、调整或个性化修改 Codex skill 属于全局 Codex 配置变更，也受 [AGENTS.md](AGENTS.md) 管理；执行后必须同步维护 [codex-skills-inventory.md](codex-skills-inventory.md)，如有流程偏差必须记录到 [codex-issue-log.md](codex-issue-log.md)。
+
 ## 03 目录地图
 
 推荐的工作区结构如下：
