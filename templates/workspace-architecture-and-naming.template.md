@@ -15,7 +15,7 @@
 
 ## 02 根目录结构
 
-根目录只放全局说明、规则、日志、清单、SOP 和一级工作目录。
+根目录只放全局说明、规则、日志、清单、SOP、台账和一级工作目录。
 
 推荐结构：
 
@@ -28,6 +28,7 @@
 ├── workspace-architecture-and-naming.md
 ├── new-project-sop.md
 ├── projects-index.md
+├── automation-index.md
 ├── projects\
 ├── shared\
 ├── archives\
@@ -134,4 +135,4 @@ Project_006_客户研究-dashboard
 
 根目录全局文件职责以 [codexworkspace-console.md](codexworkspace-console.md) 为准。
 
-本文件只维护目录架构与命名规则；项目状态和使用入口由 [projects-index.md](projects-index.md) 或项目 README 维护。
+本文件只维护目录架构与命名规则；项目状态和使用入口由 [projects-index.md](projects-index.md) 或项目 README 维护，自动化状态由 [automation-index.md](automation-index.md) 维护。

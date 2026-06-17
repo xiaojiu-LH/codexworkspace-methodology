@@ -13,6 +13,7 @@
 ├── workspace-architecture-and-naming.md
 ├── new-project-sop.md
 ├── projects-index.md
+├── automation-index.md
 ├── codex-issue-log.md
 ├── codex-skills-inventory.md
 ├── projects/

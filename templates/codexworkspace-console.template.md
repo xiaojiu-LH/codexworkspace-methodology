@@ -23,6 +23,8 @@ Codex 的强执行规则集中维护在 [AGENTS.md](AGENTS.md)。
 
 安装、删除、重命名、调整或个性化修改 Codex skill 属于全局 Codex 配置变更，也受 [AGENTS.md](AGENTS.md) 管理；执行后必须同步维护 [codex-skills-inventory.md](codex-skills-inventory.md)，如有流程偏差必须记录到 [codex-issue-log.md](codex-issue-log.md)。
 
+定时自动化、外部通知和报告投递也受 [AGENTS.md](AGENTS.md) 管理；完整方法见项目文档中的“自动化与外部投递”。外部发送前必须确认信息披露边界，长报告优先使用“短摘要 + 附件”。
+
 ## 03 目录地图
 
 推荐的工作区结构如下：
@@ -36,6 +38,7 @@ Codex 的强执行规则集中维护在 [AGENTS.md](AGENTS.md)。
 ├── workspace-architecture-and-naming.md
 ├── new-project-sop.md
 ├── projects-index.md
+├── automation-index.md
 ├── projects\
 ├── shared\
 ├── archives\
@@ -51,7 +54,10 @@ Codex 的强执行规则集中维护在 [AGENTS.md](AGENTS.md)。
 - `workspace-architecture-and-naming.md`：记录工作区架构、目录职责和项目命名规则。
 - `new-project-sop.md`：记录新建项目、迁移外部项目、初始化项目的标准流程。
 - `projects-index.md`：记录正式项目编号、类型、状态、路径、使用入口和最后更新时间。
+- `automation-index.md`：记录定时自动化、提醒、巡检、报告生成和外部投递任务。
 - `projects\`、`shared\`、`archives\`、`temp\`：一级工作目录，详细职责见 [workspace-architecture-and-naming.md](workspace-architecture-and-naming.md)。
+
+Codex 应用级的「设置 -> 个性化 -> 自定义指令」可参考方法论项目中的 `templates/global-codex-custom-instructions.template.md`。该文件不放在工作区根目录运行，而是作为复制到 Codex 全局设置中的脱敏模板。
 
 ## 04 项目生命周期
 
@@ -75,14 +81,16 @@ Project_三位编号_项目名称
 
 处理完成后再记录复盘，避免写未确认的临时判断。
 
-## 07 后续扩展区
+建议定期复盘 [codex-issue-log.md](codex-issue-log.md)：整理相似错误、重复复发模式、已有规则覆盖情况和防复发待办。复盘报告可先写入 `temp\` 下的 Markdown 或文本文件，再按“短摘要 + 附件”的方式投递到飞书、邮件或其他协作工具。
 
-后续可以逐步补充以下控制台入口：
+## 07 可选扩展区
 
-- 项目索引：[projects-index.md](projects-index.md) 记录正式项目、状态、路径和使用入口。
+以下内容不是工作区初始化必需项。只有当对应信息开始稳定复用时，再补充为新的控制台入口，避免一开始就把控制台写成超长文件：
+
 - 常用命令：沉淀跨项目常用的运行、测试、检查命令。
 - 环境说明：记录本机开发环境、语言版本、包管理器和工具约定。
-- 技能清单：[codex-skills-inventory.md](codex-skills-inventory.md) 记录当前 Codex 可用的 skills、来源和适用场景。
-- 模板库：沉淀项目 README、日志条目、SOP、复盘模板。
+- 自动化台账：[automation-index.md](automation-index.md) 记录已创建的定时自动化、触发时间、输入文件、输出位置、外部投递目标和失败处理方式。
+- 共享资产索引：记录 `shared\` 下可复用的脚本、素材、参考资料和模板来源。
+- 发布记录：记录工作区方法论、模板或公开仓库的版本变化和发布说明。
 
 本文件负责提供全局方向。具体规则应尽量拆分到职责清晰的细分文档中，避免控制台变成难以维护的超长文件。
