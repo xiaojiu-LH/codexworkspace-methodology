@@ -95,6 +95,18 @@ CodexWorkspace Methodology 是一套面向 Codex/AI coding agent 的本地工作
 
 欢迎贡献更清晰的模板、真实使用案例、工作区规则和文档改进。请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
+## 关于作者
+
+**xinghe（星禾）**  
+AI 内容自动化实践者 / AI 工具链开发者 / AI Workflow Builder
+
+GitHub: [https://github.com/xinghe-AGI](https://github.com/xinghe-AGI)  
+微信公众号: 小星禾AI  
+小红书: 小星禾AI  
+微信号: xinghe_AGI
+
+---
 ## License
 
 MIT License. See [LICENSE](LICENSE).
+
