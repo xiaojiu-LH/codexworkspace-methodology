@@ -2,30 +2,31 @@
 
 最后更新时间：YYYY-MM-DD
 
-维护范围：当前 Codex 可用的 skills。
+维护范围：当前 Codex 可用 skills 的轻量索引。完整明细由本地 HTML/JSON 台账承载，避免默认加载大量 skill 明细。
 
-## 概览
+## 总览
 
-- 总计：5 个
-- OpenAI Codex 原生系统 Skills：5 个
+- 总计：N 个
+- 本地台账：`shared\ledgers\skill-automation-ledger\latest.html`
+- 机器可读明细：`shared\ledgers\skill-automation-ledger\latest.json`
+- 刷新方式：按你的自动化或脚本定期刷新
+
+## 来源分组摘要
+
+| 分组 | 数量 | 说明 |
+|---|---:|---|
+| 示例分组 | N | 替换为真实来源分组 |
+
+## 关键自定义 Skills
+
+| 目录名 | Skill 名称 | 用途 | 详情来源 |
+|---|---|---|---|
+| `example-skill` | example-skill | 示例用途 | `latest.html/json` |
 
 ## 维护规则
 
-- 每次添加、安装、删除、重命名或调整 Codex skill 后，都需要同步更新本文件。
-- `作用简洁` 使用中文概括，不直接复制英文 frontmatter。
-- `添加时间` 记录该 skill 进入本清单的时间。
-- 默认只维护当前工作区内的本地清单；如需更新工作区外文件，必须先获得用户明确同意。
-- skills 按相同来源分组；GitHub 安装来源保留仓库 URL，本地、自带和插件来源只写简短来源标签。
-- skill 安装目录只代表本机生效位置，不等于真实来源；真实来源应优先记录 GitHub 仓库、插件名称、系统来源或用户说明。
-
-## OpenAI Codex 原生系统 Skills
-
-来源：OpenAI Codex 原生系统 Skills
-
-| 序号 | 目录名 | Skill 名称 | 作用简洁 | 添加时间 | 备注 |
-|---:|---|---|---|---|---|
-| 001 | imagegen | imagegen | 生成或编辑位图图片资产。 | YYYY-MM-DD | 示例 |
-| 002 | openai-docs | openai-docs | 查询和应用 OpenAI 产品与 API 文档。 | YYYY-MM-DD | 示例 |
-| 003 | plugin-creator | plugin-creator | 创建和整理 Codex 插件目录。 | YYYY-MM-DD | 示例 |
-| 004 | skill-creator | skill-creator | 设计和编写新的 Codex skill。 | YYYY-MM-DD | 示例 |
-| 005 | skill-installer | skill-installer | 安装和管理 Codex skills。 | YYYY-MM-DD | 示例 |
+- 添加、安装、删除、重命名或调整 Codex skill 后，更新本文件摘要并刷新 ledger。
+- 完整 skill 明细不再写入本 Markdown；需要查单个 skill 时，先查 `latest.html` 或 `latest.json`，再按需读取对应 `SKILL.md`。
+- skill 安装、删除、重命名、调整属于全局 Codex 配置变更；工作区外路径需要用户明确同意。
+- 来源应记录真实来源：GitHub 仓库、插件名称、系统来源或用户说明；安装目录只代表本机生效位置。
+- 不在本文件记录密钥、token、App Secret、完整飞书群 ID 或 GitHub 个人访问令牌。

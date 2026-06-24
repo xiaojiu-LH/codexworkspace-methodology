@@ -10,7 +10,7 @@
 |---|---|---|
 | 运行副本 | 当前任务真正执行的副本 | 项目内源码、当前使用中的 skill 副本 |
 | 发布副本 | 需要推送或公开展示时 | GitHub 发布目录、公开 README |
-| 全局副本 | 涉及全局安装或本机默认入口时 | `C:\Users\admin\.codex\skills\...` |
+| 全局副本 | 涉及全局安装或本机默认入口时 | `<USER_HOME>\.codex\skills\...` |
 | README/索引 | 对外入口或导航会受影响时 | `README.md`、`reference-images.md`、目录索引 |
 | examples/reference/QA | 示例图、参考图、提示词或 QA 规则被修改时 | `assets\examples`、`references\`、`qa-checklist.md` |
 | 治理文件 | 任务触发工作区治理动作时 | `codex-issue-log.md`、`codexworkspace-console.md` 等 |

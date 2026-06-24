@@ -1,0 +1,14 @@
+{
+  "categories": [
+    {"name": "内容创作", "keywords": ["wechat", "xhs", "小红书", "公众号", "article", "content", "copy", "press-release", "storyboard", "editor", "writing", "rewrite"]},
+    {"name": "视觉与多媒体", "keywords": ["image", "illustration", "visual", "canva", "video", "voice", "audio", "subtitle", "ppt", "presentation", "slides", "media", "封面", "配图", "视觉"]},
+    {"name": "文档/表格/演示", "keywords": ["docx", "document", "documents", "xlsx", "spreadsheet", "spreadsheets", "pdf", "sheet", "slides", "markdown", "latex", "文档", "表格", "演示"]},
+    {"name": "研发与代码", "keywords": ["code", "github", "gh-", "ci", "debug", "fix", "n8n-code", "javascript", "python", "swift", "ios", "react", "nextjs", "vercel", "supabase", "openai-developers", "developer", "build", "api"]},
+    {"name": "浏览器/网页自动化", "keywords": ["browser", "chrome", "opencli", "web", "sitemap", "adapter", "agent-browser", "automation", "crawler", "网页", "浏览器"]},
+    {"name": "外部平台与连接器", "keywords": ["lark", "feishu", "飞书", "mail", "calendar", "slack", "github", "canva", "supabase", "vercel", "connector", "im", "drive", "wiki"]},
+    {"name": "产品/商业方法", "keywords": ["product", "pm", "business", "saas", "pricing", "roadmap", "persona", "journey", "strategy", "prioritization", "user-story", "discovery", "market", "growth", "finance", "workshop", "prd"]},
+    {"name": "治理与工作区管理", "keywords": ["codexworkspace", "governance", "skill-automation-ledger", "skill-creator", "skill-installer", "template", "neat-freak", "stop-slop", "memory", "history", "ledger", "dashboard", "inventory", "台账", "治理"]},
+    {"name": "数据与数据库", "keywords": ["database", "postgres", "supabase", "sql", "metrics", "analytics", "data", "dataset", "base", "sheets", "数据", "数据库"]}
+  ],
+  "defaultCategory": "未分类"
+}

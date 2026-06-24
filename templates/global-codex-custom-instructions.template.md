@@ -12,8 +12,9 @@
 ## 定位
 
 - 本文件只保留跨项目、跨对话必须遵守的短触发器。
-- 进入 `<WORKSPACE_ROOT>` 后，以 `<WORKSPACE_ROOT>\AGENTS.md` 作为完整工作区规则来源。
-- 具体流程、台账、复盘包和 runbook 维护在 `<WORKSPACE_ROOT>` 内，不在全局 Agent 中展开。
+- 进入 `<WORKSPACE_ROOT>` 后，默认只读 `<WORKSPACE_ROOT>\AGENTS.md` 和 `<WORKSPACE_ROOT>\codexworkspace-console.md`。
+- 工作区内任务细节由 `<WORKSPACE_ROOT>\governance\routing.md` 渐进式披露；不要在全局 Agent 展开 SOP、台账、复盘包或 playbook 细节。
+- 不默认读取 issue log 归档原文、完整 automation 详情、完整 skills 明细或 `governance\reviews\...\evidence\`。
 
 ## 工作区边界
 
@@ -29,14 +30,17 @@
 - 工作区外路径
 - 全局配置变更
 - 外部投递
+- 自动化变更
+- skill 变更
 - 多副本同步
-- 编码敏感文件
+- Windows 写回或编码敏感文件
+- GitHub 发布或网络访问
 
-若命中以上任一项，先说明影响范围、风险边界和将使用的工作区规则，再继续。
+若命中以上任一项，进入工作区后先按 `governance\routing.md` 读取最小必需规则，再继续。
 
 ## 治理收尾
 
-最终回复前必须回看本轮是否触发治理动作：
+最终回复前只回看本轮实际触发的治理动作：
 
 - 项目新建、迁移、归档
 - skill 安装、删除、重命名、调整
@@ -45,14 +49,14 @@
 - 治理复盘包创建或更新
 - 错误、返工、遗漏或规则理解偏差
 
-若进入 `<WORKSPACE_ROOT>`，必须按工作区级 `AGENTS.md` 的“最终回复前检查”完成治理收尾，并在最终回复中说明相关治理文件是否已更新。
+若进入 `<WORKSPACE_ROOT>`，必须按工作区级 `AGENTS.md` 的治理收尾规则完成检查，并在最终回复中说明相关治理文件是否已更新。
 
 ## 全局配置与 Skill
 
 - 安装、删除、重命名、调整或个性化修改 Codex skill，属于全局 Codex 配置变更。
 - 操作工作区外路径前，必须先获得用户明确同意。
-- skill 变更后必须同步更新 `<WORKSPACE_ROOT>\codex-skills-inventory.md`。
-- 如果过程中出现返工、遗漏或规则理解偏差，处理完成后必须更新 `<WORKSPACE_ROOT>\codex-issue-log.md`。
+- skill 变更后必须同步更新 `<WORKSPACE_ROOT>\codex-skills-inventory.md`，并刷新 `<WORKSPACE_ROOT>\shared\ledgers\skill-automation-ledger`。
+- 如果过程中出现返工、遗漏或规则理解偏差，处理完成后必须更新 `<WORKSPACE_ROOT>\codex-issue-log.md` 短记录。
 
 ## 外部投递
 
@@ -63,9 +67,8 @@
 ## Windows 与编码
 
 - 遇到 Windows sandbox/helper 抖动时，不要连续硬重试，也不要直接判断文件损坏。
-- 普通读取、目录扫描或 `apply_patch` 首次失败后，先缩小范围、使用绝对路径、减少并行。
-- 长中文 Markdown、治理文件、README、`SKILL.md` 或编码敏感文件写回时，优先 `apply_patch`；如失败，改用 UTF-8 no BOM 受控写回，并复核文件头、文件尾、关键词、NUL 和异常控制字符。
-- PowerShell 处理 Markdown 反引号、Windows 路径、正则 replacement、`$p:$i`、换行或通配符时，优先单引号 here-string、`.Replace()`、格式化字符串或 MatchEvaluator。
+- 如果目标在 `<WORKSPACE_ROOT>` 内、动作不涉及网络/认证/Git 写入/工作区外路径/破坏性操作，helper 抖动后不得直接申请提权；应先按工作区 routing/playbook 走未提权降级。
+- 长中文 Markdown、治理文件、README、`SKILL.md` 或编码敏感文件写回时，使用 UTF-8 no BOM，并复核文件头、文件尾、关键词、NUL 和异常控制字符。
 
 ## 规则维护
 

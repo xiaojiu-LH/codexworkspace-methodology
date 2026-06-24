@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Automation Ledger"
+  short_description: "Build skill and automation ledgers."
+  default_prompt: "Use $skill-automation-ledger to refresh the skills and automation ledger dashboard for this workspace."

@@ -7,7 +7,9 @@
 ## 职责边界
 
 - `codex-issue-log.md`：记录短复盘、入口索引、复发标注和指向复盘包的链接；顶部索引用于告诉 A001 哪些问题簇已治理、哪些仍是候选。
+- `governance\routing.md`：任务路由表，用于按任务信号渐进式读取 SOP、playbook、台账或复盘包。
 - `governance\playbooks\`：保存可重复执行的 checklist 和 runbook，覆盖任务分型、外部投递、Windows 写入、sandbox 分流、多副本同步和 canonical artifact 检查。
+- `governance\automation-scenarios\`：保存每个自动化的详细目标、读取范围、执行步骤、权限和失败处理。
 - `governance\reviews-index.md`：记录治理复盘包和候选问题簇的总览、状态、复发次数、最近发生、A001 是否跳过长复盘和最后验证时间。
 - `governance\reviews\`：按年份保存完整复盘包。
 - `evidence\`：只存在于具体复盘包内，保存截图、报告、命令输出和附件，不把大段证据塞进正文。
@@ -17,6 +19,9 @@
 ```text
 governance\
 ├── README.md
+├── routing.md
+├── automation-scenarios\
+│   └── Axxx-slug.md
 ├── playbooks\
 │   ├── task-intake-and-closeout-checklist.md
 │   ├── external-delivery-checklist.md

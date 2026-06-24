@@ -1,113 +1,55 @@
-# CodexWorkspace 全局控制台
+# CodexWorkspace 控制台
 
 最后更新时间：YYYY-MM-DD
 
-> 这是 `<WORKSPACE_ROOT>` 的总入口文件。Codex 进入本工作区后，应先阅读本文件，找到对应规则、流程、台账和复盘文件。
-> 本文件需要根据用户的最新需求、工作区规则变化和项目管理方式持续更新。
+> 本文件是短导航入口。默认与 `AGENTS.md` 一起读取；细节按 `governance\routing.md` 渐进式披露。
 
-## 01 工作区定位
+## 工作区定位
 
-`<WORKSPACE_ROOT>` 是所有 Codex 工作和项目处理的唯一根目录。
+`<WORKSPACE_ROOT>` 是 Codex 项目、治理文件、自动化台账和共享资产的唯一工作区根目录。
 
-核心原则：
+## 默认入口
 
-- 所有 Codex 项目工作都以 `<WORKSPACE_ROOT>` 为唯一工作根目录。
-- 外部项目先按 [new-project-sop.md](new-project-sop.md) 迁移，再在工作区副本上继续。
-- 强执行规则见 [AGENTS.md](AGENTS.md)，目录和命名细则见 [workspace-architecture-and-naming.md](workspace-architecture-and-naming.md)。
+- 强规则 bootloader：[AGENTS.md](AGENTS.md)
+- 任务路由表：[governance\routing.md](governance/routing.md)
+- 目录与命名：[workspace-architecture-and-naming.md](workspace-architecture-and-naming.md)
+- 新建/迁移项目：[new-project-sop.md](new-project-sop.md)
+- 项目台账：[projects-index.md](projects-index.md)
 
-## 02 Codex 行为规则
-
-Codex 的强执行规则集中维护在 [AGENTS.md](AGENTS.md)。
-
-本控制台只做索引，不重复维护执行细则。
-
-安装、删除、重命名、调整或个性化修改 Codex skill 属于全局 Codex 配置变更，也受 [AGENTS.md](AGENTS.md) 管理；执行后必须同步维护 [codex-skills-inventory.md](codex-skills-inventory.md)，如有流程偏差必须记录到 [codex-issue-log.md](codex-issue-log.md)。
-
-定时自动化、外部通知和报告投递也受 [AGENTS.md](AGENTS.md) 管理；完整方法见项目文档中的“自动化与外部投递”。外部发送前必须确认信息披露边界，长报告优先使用“短摘要 + 附件”。
-
-## 03 目录地图
-
-推荐的工作区结构如下：
+## 目录地图
 
 ```text
 <WORKSPACE_ROOT>
-├── codexworkspace-console.md
 ├── AGENTS.md
+├── codexworkspace-console.md
+├── governance\
+│   ├── routing.md
+│   ├── playbooks\
+│   ├── automation-scenarios\
+│   └── reviews\
+├── automation-index.md
 ├── codex-issue-log.md
 ├── codex-skills-inventory.md
-├── workspace-architecture-and-naming.md
-├── new-project-sop.md
-├── projects-index.md
-├── automation-index.md
-├── governance\
 ├── projects\
 ├── shared\
 ├── archives\
 └── temp\
 ```
 
-目录和文件职责：
+## 按任务读取
 
-- `codexworkspace-console.md`：全局控制台，总入口，总说明书。
-- `AGENTS.md`：Codex 可读取的强约束规则，用于让后续任务自动遵守工作区规范。
-- `codex-issue-log.md`：记录 Codex 使用过程中的踩坑、不满意点、错误和处理复盘。
-- `codex-skills-inventory.md`：记录当前 Codex 可用的 skills、来源、用途和添加时间。
-- `workspace-architecture-and-naming.md`：记录工作区架构、目录职责和项目命名规则。
-- `new-project-sop.md`：记录新建项目、迁移外部项目、初始化项目的标准流程。
-- `projects-index.md`：记录正式项目编号、类型、状态、路径、使用入口和最后更新时间。
-- `automation-index.md`：记录定时自动化、提醒、巡检、报告生成和外部投递任务。
-- `governance\`：治理档案馆，保存治理执行模板、完整复盘包、整改记录和证据材料；总索引见 [governance\reviews-index.md](governance/reviews-index.md)。
-- `projects\`、`shared\`、`archives\`、`temp\`：一级工作目录，详细职责见 [workspace-architecture-and-naming.md](workspace-architecture-and-naming.md)。
+- 普通代码/文档修改：只读项目相关文件。
+- 外部投递：读 `governance\playbooks\external-delivery-checklist.md`。
+- Windows/helper/编码问题：读 sandbox 和 Windows safe editing playbook。
+- skill 变更：读 `codex-skills-inventory.md` 和 multi-surface sync playbook。
+- 自动化变更：读 `automation-index.md` 和对应 scenario。
+- 复盘整理：读 `codex-issue-log.md` 的问题簇索引和 `governance\reviews-index.md`。
 
-Codex 应用级的「设置 -> 个性化 -> 自定义指令」可参考方法论项目中的 `templates/global-codex-custom-instructions.template.md`。该文件不放在工作区根目录运行，而是作为复制到 Codex 全局设置中的脱敏模板。
+完整路由以 [governance\routing.md](governance/routing.md) 为准。
 
-## 04 项目生命周期
+## 轻量台账
 
-本工作区内的项目默认经历：新建或迁移、初始化、使用与维护、问题复盘、归档。
-
-新建项目、迁移外部项目、项目 README 初始化和完成后检查的详细流程见：[new-project-sop.md](new-project-sop.md)
-
-## 05 命名与架构原则
-
-项目命名默认使用：
-
-```text
-Project_三位编号_项目名称
-```
-
-完整的目录职责、编号分配、中文项目名、外部项目迁移命名和归档规则见：[workspace-architecture-and-naming.md](workspace-architecture-and-naming.md)
-
-## 06 问题复盘机制
-
-错误、不满意结果、返工、踩坑和规则理解偏差统一记录在 [codex-issue-log.md](codex-issue-log.md)。
-
-处理完成后再记录复盘，避免写未确认的临时判断。
-
-建议定期复盘 [codex-issue-log.md](codex-issue-log.md)：整理相似错误、重复复发模式、已有规则覆盖情况和防复发待办。复盘报告可先写入 `temp\` 下的 Markdown 或文本文件，再按“短摘要 + 附件”的方式投递到飞书、邮件或其他协作工具。
-
-日常执行优先查 [governance\playbooks](governance/playbooks) 下的 checklist/runbook；当复盘需要长期保存整改行为、验证状态或证据材料时，再升级为 [governance](governance/README.md) 复盘包。`codex-issue-log.md` 只保留短记录、入口索引、复发标注和复盘包链接。
-
-`codex-issue-log.md` 顶部维护“已归档重复问题索引”；A001 定时复盘命中已治理问题簇时，不重复生成长复盘，只统计是否复发、是否突破现有规则、是否需要更新对应治理包。候选问题簇继续分析，待确认高频后再创建完整治理包。
-
-## 07 治理执行模板
-
-以下模板用于把已知规则前置成默认动作，避免只在 issue log 里沉淀经验：
-
-- [task-intake-and-closeout-checklist.md](governance/playbooks/task-intake-and-closeout-checklist.md)：任务分型预检与收尾检查。
-- [external-delivery-checklist.md](governance/playbooks/external-delivery-checklist.md)：飞书、邮件、GitHub、网页等外部投递前检查。
-- [windows-safe-editing.md](governance/playbooks/windows-safe-editing.md)：Windows/PowerShell 写入与编码安全约定。
-- [sandbox-and-escalation-decision-tree.md](governance/playbooks/sandbox-and-escalation-decision-tree.md)：sandbox 失败后的排查与提权顺序。
-- [multi-surface-sync-matrix.md](governance/playbooks/multi-surface-sync-matrix.md)：skill、文档、资产和多副本同步矩阵。
-- [canonical-artifact-check.md](governance/playbooks/canonical-artifact-check.md)：修改前的权威文件、字段口径和运行副本检查。
-
-## 08 可选扩展区
-
-以下内容不是工作区初始化必需项。只有当对应信息开始稳定复用时，再补充为新的控制台入口，避免一开始就把控制台写成超长文件：
-
-- 常用命令：沉淀跨项目常用的运行、测试、检查命令。
-- 环境说明：记录本机开发环境、语言版本、包管理器和工具约定。
-- 自动化台账：[automation-index.md](automation-index.md) 记录已创建的定时自动化、触发时间、输入文件、输出位置、外部投递目标和失败处理方式。
-- 共享资产索引：记录 `shared\` 下可复用的脚本、素材、参考资料和模板来源。
-- 发布记录：记录工作区方法论、模板或公开仓库的版本变化和发布说明。
-
-本文件负责提供全局方向。具体规则应尽量拆分到职责清晰的细分文档中，避免控制台变成难以维护的超长文件。
+- 自动化总览：[automation-index.md](automation-index.md)，详情在 `governance\automation-scenarios\`。
+- issue log：[codex-issue-log.md](codex-issue-log.md)，只保留问题簇索引、历史摘要和近期短记录。
+- skills 索引：[codex-skills-inventory.md](codex-skills-inventory.md)，完整明细看 `shared\ledgers\skill-automation-ledger\latest.html` / `latest.json`。
+- 治理复盘总览：[governance\reviews-index.md](governance/reviews-index.md)。
