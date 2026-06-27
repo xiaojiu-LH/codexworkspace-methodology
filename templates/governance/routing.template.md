@@ -2,11 +2,12 @@
 
 最后更新时间：YYYY-MM-DD
 
-本文件是 CodexWorkspace 的渐进式披露路由表。默认只读 `AGENTS.md` 和 `codexworkspace-console.md`；命中特定任务信号后，再读取本文件指向的 SOP、playbook 或台账详情。
+本文件是 CodexWorkspace 的渐进式披露路由表。默认只读 `AGENTS.md` 和 `codexworkspace-console.md`；读取层级先看 `governance\context-budget.md`，命中特定任务信号后，再读取本文件指向的 SOP、playbook 或台账详情。
 
 ## 读取原则
 
 - 先判断任务类型，再读取对应文件。
+- 先遵守 `governance\context-budget.md` 的默认启动层、中等任务和复杂治理任务边界。
 - 不因普通代码修改默认读取 `codex-issue-log.md`、`automation-index.md`、`codex-skills-inventory.md` 全量内容。
 - 已归档证据、完整 skill 明细、自动化详情和长复盘只在命中任务时读取。
 - 如果任务同时命中多个信号，只读取完成任务所需的最小集合。

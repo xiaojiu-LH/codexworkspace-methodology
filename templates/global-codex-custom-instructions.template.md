@@ -49,14 +49,14 @@
 - 治理复盘包创建或更新
 - 错误、返工、遗漏或规则理解偏差
 
-若进入 `<WORKSPACE_ROOT>`，必须按工作区级 `AGENTS.md` 的治理收尾规则完成检查，并在最终回复中说明相关治理文件是否已更新。
+若进入 `<WORKSPACE_ROOT>`，只按工作区级 `AGENTS.md` 检查本轮实际触发的治理动作；最终回复只说明实际更新过的治理文件，未触发治理动作时一句说明即可。
 
 ## 全局配置与 Skill
 
 - 安装、删除、重命名、调整或个性化修改 Codex skill，属于全局 Codex 配置变更。
 - 操作工作区外路径前，必须先获得用户明确同意。
 - skill 变更后必须同步更新 `<WORKSPACE_ROOT>\codex-skills-inventory.md`，并刷新 `<WORKSPACE_ROOT>\shared\ledgers\skill-automation-ledger`。
-- 如果过程中出现返工、遗漏或规则理解偏差，处理完成后必须更新 `<WORKSPACE_ROOT>\codex-issue-log.md` 短记录。
+- 如果过程中出现用户可见返工、文件部分落盘、规则失效、跨全局/外部路径，或同类复发达到阈值，处理完成后更新 `<WORKSPACE_ROOT>\codex-issue-log.md` 短记录。
 
 ## 外部投递
 
@@ -67,6 +67,7 @@
 ## Windows 与编码
 
 - 遇到 Windows sandbox/helper 抖动时，不要连续硬重试，也不要直接判断文件损坏。
+- 遇到中文路径、治理文件、长中文 Markdown、`SKILL.md`、`temp/archives` 或大范围扫描时，第一轮先用绝对路径、单文件、小范围命令；确认 sandbox 稳定后再并行读取或扩大扫描。
 - 如果目标在 `<WORKSPACE_ROOT>` 内、动作不涉及网络/认证/Git 写入/工作区外路径/破坏性操作，helper 抖动后不得直接申请提权；应先按工作区 routing/playbook 走未提权降级。
 - 长中文 Markdown、治理文件、README、`SKILL.md` 或编码敏感文件写回时，使用 UTF-8 no BOM，并复核文件头、文件尾、关键词、NUL 和异常控制字符。
 

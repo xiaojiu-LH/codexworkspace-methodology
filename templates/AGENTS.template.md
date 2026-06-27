@@ -2,11 +2,12 @@
 
 最后更新时间：YYYY-MM-DD
 
-本文件是工作区 bootloader，只保留跨任务必须执行的短规则。默认启动读取本文件和 `codexworkspace-console.md`；任务细节按 `governance\routing.md` 渐进式披露。
+本文件是工作区 bootloader，只保留跨任务必须执行的短规则。默认启动读取本文件和 `codexworkspace-console.md`；读取范围先受 `governance\context-budget.md` 约束，再按 `governance\routing.md` 渐进式披露。
 
 ## 默认读取策略
 
 - 默认只读：`AGENTS.md`、`codexworkspace-console.md`。
+- 上下文预算：先按 `governance\context-budget.md` 判断默认启动层、中等任务或复杂治理任务。
 - 命中任务信号后再读：`governance\routing.md` 指向的 SOP、playbook、台账或复盘包。
 - 不默认读：`codex-issue-log.md` 归档原文、完整 automation 详情、完整 skills 明细、`governance\reviews\...\evidence\`。
 
