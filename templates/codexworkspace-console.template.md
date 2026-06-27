@@ -11,6 +11,7 @@
 ## 默认入口
 
 - 强规则 bootloader：[AGENTS.md](AGENTS.md)
+- 上下文预算：[governance\context-budget.md](governance/context-budget.md)
 - 任务路由表：[governance\routing.md](governance/routing.md)
 - 目录与命名：[workspace-architecture-and-naming.md](workspace-architecture-and-naming.md)
 - 新建/迁移项目：[new-project-sop.md](new-project-sop.md)
@@ -46,6 +47,14 @@
 - 复盘整理：读 `codex-issue-log.md` 的问题簇索引和 `governance\reviews-index.md`。
 
 完整路由以 [governance\routing.md](governance/routing.md) 为准。
+
+## 上下文预算
+
+- 默认启动层：只读 `AGENTS.md` 和本控制台。
+- 中等任务：加读 routing 对应行、项目相关文件，最多 1 个相关 playbook 或台账。
+- 复杂治理任务：才读取相关台账、playbook、治理包；evidence 和历史归档只按需读。
+
+完整预算以 [governance\context-budget.md](governance/context-budget.md) 为准。
 
 ## 轻量台账
 

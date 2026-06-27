@@ -33,11 +33,15 @@ CodexWorkspace Methodology 是一套面向 Codex/AI coding agent 的本地工作
 - `governance/reviews/...` 承载完整复盘、整改动作和证据材料，证据放入具体复盘包的 `evidence/`。
 - A001 定时复盘先读取问题簇索引；已治理问题只统计复发和是否突破现有规则，不重复生成长复盘。
 - `governance/playbooks/` 承载可复用 checklist/runbook，让任务预检、外部投递、Windows 写入、sandbox 分流、多副本同步和 canonical artifact 检查有统一入口。
+
 ## 渐进式披露
 
 CodexWorkspace 默认只让 Codex 读取极薄的 `AGENTS.md` 和 `codexworkspace-console.md`，再由 `governance/routing.md` 按任务信号路由到对应 playbook、SOP、台账或复盘包。
 
 这样普通代码修改不会默认加载 issue log、自动化详情或完整 skills 清单；只有外部投递、skill 变更、Windows 写回、自动化维护、复盘整理等特定任务，才读取对应细则。
+
+`governance/context-budget.md` 进一步定义默认启动层、中等任务和复杂治理任务的读取边界，防止规则和台账在长期使用中重新膨胀。
+
 ## 推荐工作区结构
 
 ```text
@@ -72,7 +76,7 @@ CodexWorkspace 默认只让 Codex 读取极薄的 `AGENTS.md` 和 `codexworkspac
 | `automation-index.template.md` | 定时自动化、提醒、巡检和外部投递台账 |
 | `codex-issue-log.template.md` | 错误、不满意点、返工和踩坑复盘 |
 | `codex-skills-inventory.template.md` | Codex skills 清单 |
-| `governance/` | 治理档案馆模板，包含 routing、playbooks、automation scenarios、复盘包索引、复盘正文、整改记录和证据目录 |
+| `governance/` | 治理档案馆模板，包含 context budget、routing、playbooks、automation scenarios、复盘包索引、复盘正文、整改记录和证据目录 |
 
 模板中的 `<WORKSPACE_ROOT>`、`YYYY-MM-DD`、示例项目名和示例编号都需要按自己的工作区替换。
 
